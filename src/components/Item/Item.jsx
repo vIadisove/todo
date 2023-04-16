@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import MyButton from "../UI/button/myButton";
 import { updateCurrentId } from "../../store/action";
@@ -19,6 +19,7 @@ const Item = ({
   tasks,
 }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   function getId(e) {
     const currentId = e.target.id;
     dispatch(updateCurrentId(currentId));
